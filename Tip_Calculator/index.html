@@ -7,15 +7,17 @@
      <script defer type="text/javascript" src="script.js"></script>
   </head>
   <body>
-    <section class="logo">
-      <img src="img/logo.svg" alt="Splitter logo">
-    </section>
+    <img id="logo" src="img/logo.svg" alt="Splitter logo">
+
 
     <section class="main_container">
       <section class="input_container">
         <label for="bill">Bill</label>
+        <br>
         <input type="text" name="bill" placeholder="0.00">
+        <br>
         <label for="">Select Tip %</label>
+        <br>
         <div class="tip_button_container">
           <button type="button" name="5%">5%</button>
           <button type="button" name="10%">10%</button>
@@ -24,7 +26,9 @@
           <button type="button" name="50%">50%</button>
           <input type="text" name="custom" placeholder="Custom">
         </div>
-        <label for="num_of_people"></label>
+        <br>
+        <label for="num_of_people">Number of people</label>
+        <br>
         <input type="text" name="num_of_people" placeholder="0">
       </section>
 
