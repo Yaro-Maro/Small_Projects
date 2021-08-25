@@ -18,6 +18,7 @@ body {
   width: 100px;
 }
 
+/* TODO: WORK ON THIS CONTAINER (width, padding)*/
 /* Container classes */
 .main_container {
   border-radius: 20px;
@@ -35,24 +36,41 @@ body {
 }
 
 
+/* Text classes */
+label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: hsl(186, 14%, 43%);
+}
+
+
 /* Form field classes */
-input {
+input[type="text"] {
+  display: block;
+  margin-bottom: 2em;
   border: none;
   border-radius: 5px;
+  padding: 0.5em;
   width: 100%;
-  padding: 0.2em;
   background-color: hsl(0, 0%, 95%);
   font-size: 2em;
   font-weight: 600;
 }
 
+
+
+/* Button classes */
 .tip_button {
-  margin: 0.1em;
+  display: inline-block;
+  margin: 0.2em;
   border: none;
   border-radius: 5px;
+  padding: 0.3em;
+  box-sizing: border-box;
   width: 30%;
   min-width: 5em;
-  padding: 0.05em;
   background-color: hsl(183, 100%, 15%);
   color: white;
   font-size: 2em;
@@ -60,11 +78,19 @@ input {
   text-align: center;
 }
 
+
+
 .tip_button#custom {
   background: hsl(0, 0%, 95%);
   color: hsl(186, 14%, 43%);
 
 }
+
+
+
+
+
+
 
 /* Remove arrows for number input */
 /* Chrome, Safari, Edge, Opera */

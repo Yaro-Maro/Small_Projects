@@ -9,22 +9,25 @@
   <body>
     <img id="logo" src="img/logo.svg" alt="Splitter logo">
 
- 
+
     <section class="main_container">
       <section class="input_container">
         <label for="bill">Bill</label>
-        <br>
+
         <input type="text" name="bill" placeholder="0.00">
-        <br>
+
         <label for="">Select Tip %</label>
-        <br>
+
         <div class="tip_inputs">
           <button type="button" name="5%" id="5" class="tip_button">5%</button>
           <button type="button" name="10%" id="10"class="tip_button">10%</button>
           <button type="button" name="15%" id="15"class="tip_button">15%</button>
           <button type="button" name="25%" id="25"class="tip_button">25%</button>
           <button type="button" name="50%" id="50"class="tip_button">50%</button>
-          <input type="number" name="custom" placeholder="Custom" id="custom" class="tip_button">
+          <input
+            maxlength="2" type="number" name="custom" placeholder="Custom" id="custom" class="tip_button"
+            oninput="javascript: if (this.value.length > this.maxLength) { this.value = this.value.slice(0, this.maxLength); }"
+          />
         </div>
         <br>
         <label for="num_of_people">Number of people</label>
