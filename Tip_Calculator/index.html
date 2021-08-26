@@ -7,8 +7,10 @@
      <script defer type="text/javascript" src="script.js"></script>
   </head>
   <body>
-    <img id="logo" src="img/logo.svg" alt="Splitter logo">
 
+    <div class="logo-container">
+      <img class="logo" src="img/logo.svg" alt="Splitter logo">
+    </div>
 
     <section class="main_container">
       <section class="input_container">
@@ -30,22 +32,22 @@
           />
         </div>
         <br>
-        <label for="num_of_people">Number of people</label>
-        <br>
+        <label for="num_of_people">Number of People</label>
         <input type="text" name="num_of_people" placeholder="0">
       </section>
 
-      <section class="display_container">
-        <table>
+      <section class="results_container">
+        <table class="results_table">
           <tr>
-            <td class="tip_to_give">Tip amount <br><sub>/ person</sub></td>
-            <td id="displayTipAmount"></td>
+            <td class="white_text">Tip amount<span class="subtext">/ person</span></td>
+            <td class="result" id="displayPerPerson">$4.27</td>
           </tr>
           <tr>
-            <td>Total <br><sub>/ person</sub></td>
-            <td id="displayTotal"></td>
+            <td class="white_text">Total<br><span class="subtext">/ person</span></td>
+            <td class="result" id="displayTotal">32.79$</td>
           </tr>
         </table>
+        <button id="reset_button" type="button" name="button">RESET</button>
       </section>
     </section>
 
