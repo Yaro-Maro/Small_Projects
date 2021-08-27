@@ -7,31 +7,37 @@
      <script defer type="text/javascript" src="script.js"></script>
   </head>
   <body>
-
     <div class="logo-container">
       <img class="logo" src="img/logo.svg" alt="Splitter logo">
     </div>
 
+
+
     <section class="main_container">
       <section class="input_container">
         <label for="bill">Bill</label>
-        <input type="text" name="bill" placeholder="0.00">
-
-        <label for="">Select Tip %</label>
-        <div class="tip_inputs">
-          <button type="button" name="5%" id="5" class="tip_button">5%</button>
-          <button type="button" name="10%" id="10"class="tip_button">10%</button>
-          <button type="button" name="15%" id="15"class="tip_button">15%</button>
-          <button type="button" name="25%" id="25"class="tip_button">25%</button>
-          <button type="button" name="50%" id="50"class="tip_button">50%</button>
+        <input
+          id="bill" spellcheck="false" type="number" maxlength="6" name="bill" placeholder="0.00"
+          oninput="javascript: if (this.value.length > this.maxLength) { this.value = this.value.slice(0, this.maxLength); }"
+        />
+        <label>Select Tip %</label>
+        <div class="tip_buttons">
+          <a class="tip_button" href="#" type="button" name="5%" id="5" >5%</a>
+          <a class="tip_button" href="#" type="button" name="10%" id="10">10%</a>
+          <a class="tip_button" href="#" type="button" name="15%" id="15">15%</a>
+          <a class="tip_button" href="#" type="button" name="25%" id="25">25%</a>
+          <a class="tip_button" href="#" type="button" name="50%" id="50">50%</a>
           <input
-            maxlength="2" type="number" name="custom" placeholder="Custom" id="custom" class="tip_button"
+            id="customTip" class="tip_button" spellcheck="false" maxlength="2" type="number" name="custom" placeholder="Custom"
             oninput="javascript: if (this.value.length > this.maxLength) { this.value = this.value.slice(0, this.maxLength); }"
           />
         </div>
         <br>
-        <label for="num_of_people">Number of People</label>
-        <input type="text" name="num_of_people" placeholder="0">
+        <label for="numOfPeople">Number of People</label>
+        <input
+          id="numOfPeople" spellcheck="false" type="number" maxlength="3" name="people" placeholder="0"
+          oninput="javascript: if (this.value.length > this.maxLength) { this.value = this.value.slice(0, this.maxLength); }"
+        />
       </section>
 
       <section class="results_container">
@@ -45,7 +51,7 @@
             <td class="result" id="displayTotal">32.79$</td>
           </tr>
         </table>
-        <button id="reset_button" type="button" name="button">RESET</button>
+        <a href="#" id="reset_button">RESET</a>
       </section>
     </section>
 
