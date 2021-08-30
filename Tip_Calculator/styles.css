@@ -55,6 +55,19 @@ label {
   color: hsl(186, 14%, 43%);
 }
 
+/* Table classes */
+table.results_table {
+  width: 100%;
+}
+
+tr {
+  height: 5em;
+}
+
+td {
+  width: 50%;
+}
+
 .white-text {
   font-size: 1.3em;
   font-weight: 600;
@@ -74,20 +87,6 @@ label {
   font-weight: 600;
   text-align: right;
   color: hsl(172, 67%, 45%);
-}
-
-
-/* Table classes */
-table.results_table {
-  width: 100%;
-}
-
-tr {
-  height: 5em;
-}
-
-td {
-  width: 50%;
 }
 
 
@@ -117,11 +116,6 @@ input:focus {
 
 }
 
-#customTip {
-  background-color: hsl(0, 0%, 95%);
-}
-
-
 /* Button classes */
 .tip-buttons {
   margin-bottom: 2em;
@@ -140,6 +134,10 @@ input:focus {
   font-size: 1.5em;
   font-weight: 600;
   text-align: center;
+}
+
+#customTip {
+  background-color: hsl(0, 0%, 95%);
 }
 
 #resetButton  {
