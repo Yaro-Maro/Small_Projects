@@ -27,7 +27,7 @@ body {
 
 /* TODO: WORK ON THIS CONTAINER (width, padding)*/
 /* Container classes */
-.main_container {
+.main-container {
   margin-top: -2em;
   border-radius: 20px;
   padding: 15px;
@@ -35,11 +35,11 @@ body {
 
 }
 
-.input_container {
+.input-container {
   margin: 10px;
 }
 
-.results_container {
+.results-container {
   padding: 2em;
   border-radius: 20px;
   background-color: hsl(183, 100%, 15%);
@@ -55,7 +55,7 @@ label {
   color: hsl(186, 14%, 43%);
 }
 
-.white_text {
+.white-text {
   font-size: 1.3em;
   font-weight: 600;
   color: hsl(0, 0%, 100%);
@@ -118,16 +118,16 @@ input:focus {
 }
 
 #customTip {
-  background-color: hsl(0, 0%, 95%);;
+  background-color: hsl(0, 0%, 95%);
 }
 
 
 /* Button classes */
-.tip_buttons {
+.tip-buttons {
   margin-bottom: 2em;
 }
 
-.tip_button {
+.tip-button {
   display: inline-block;
   margin: 0.2em;
   border: none;
@@ -142,7 +142,7 @@ input:focus {
   text-align: center;
 }
 
-#reset_button  {
+#resetButton  {
   display: block;
   margin-top: 1em;
   border: none;
@@ -162,7 +162,7 @@ a {
   text-decoration: none;
 }
 
-a:hover, a:hover#reset_button {
+a:hover, a:hover#resetButton {
   background-color: hsl(185, 41%, 84%);
   color: hsl(183, 100%, 15%);
 }
