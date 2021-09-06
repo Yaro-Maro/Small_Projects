@@ -1,6 +1,15 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 
+/*
+- Strong cyan: hsl(172, 67%, 45%)
+- Very dark cyan: hsl(183, 100%, 15%)
+- Dark grayish cyan: hsl(186, 14%, 43%)
+- Dark grayish cyan: hsl(184, 14%, 56%)
+- Light grayish cyan: hsl(185, 41%, 84%)
+- Light grayish cyan: hsl(189, 41%, 97%)
+- White: hsl(0, 0%, 100%) */
+
 * {
   margin: 0;
   padding: 0;
@@ -135,7 +144,7 @@ input:focus {
 .tip-button {
   display: inline-block;
   margin: 0.2em;
-  border: none;
+  border: solid hsla(0,0%,0%,0); /* transparent border */
   border-radius: 5px;
   padding: 0.3em;
   box-sizing: border-box;
@@ -149,6 +158,7 @@ input:focus {
 
 #customTip {
   background-color: hsl(0, 0%, 95%);
+  color: hsl(183, 100%, 15%);
 }
 
 #resetButton  {
@@ -166,6 +176,7 @@ input:focus {
   text-align: center;
 }
 
+
 /* Link classes */
 a {
   text-decoration: none;
@@ -177,9 +188,14 @@ a:hover, a:hover#resetButton {
 }
 
 /* Interactive classes */
-#active {
-  border: hsl(172, 67%, 45%);
+.active {
+  border: solid hsl(172, 67%, 45%)!important;
   background-color: hsl(172, 67%, 45%);
+}
+
+.grayout {
+  background-color: hsl(183, 100%, 20%)!important;
+  cursor: default;
 }
 
 
@@ -194,3 +210,12 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+/*
+- Strong cyan: hsl(172, 67%, 45%)
+- Very dark cyan: hsl(183, 100%, 15%)
+- Dark grayish cyan: hsl(186, 14%, 43%)
+- Dark grayish cyan: hsl(184, 14%, 56%)
+- Light grayish cyan: hsl(185, 41%, 84%)
+- Light grayish cyan: hsl(189, 41%, 97%)
+- White: hsl(0, 0%, 100%) */

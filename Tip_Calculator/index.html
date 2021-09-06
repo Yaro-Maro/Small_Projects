@@ -11,16 +11,14 @@
       <img class="logo" src="img/logo.svg" alt="Splitter logo">
     </div>
 
-    <!-- TODO: Remap keys for "block-and-line-comment" -->
+
 
     <section class="main-container">
       <section class="input-container">
         <label for="bill">Bill</label>
         <img class="badge" src="img\icon-dollar.svg" alt="dollar image">
         <input
-          id="bill" spellcheck="false" type="number" maxlength="6" name="bill" placeholder="0.00"
-          oninput="javascript: if (this.value.length > this.maxLength) { this.value = this.value.slice(0, this.maxLength); }"
-        />
+          id="bill" spellcheck="false" type="number" maxlength="6" name="bill" placeholder="0.00">
         <label>Select Tip %</label>
         <div class="tip-buttons">
           <a class="tip-button" href="#" type="button" name="5%" id="5">5%</a>
@@ -28,30 +26,24 @@
           <a class="tip-button" href="#" type="button" name="15%" id="15">15%</a>
           <a class="tip-button" href="#" type="button" name="25%" id="25">25%</a>
           <a class="tip-button" href="#" type="button" name="50%" id="50">50%</a>
-          <input
-            class="tip-button" id="customTip" spellcheck="false" maxlength="2" type="number" name="custom" placeholder="Custom"
-            oninput="javascript: if (this.value.length > this.maxLength) { this.value = this.value.slice(0, this.maxLength); }"
-          />
+          <input class="tip-button" id="customTip" spellcheck="false" maxlength="2" type="number" name="custom" placeholder="Custom">
         </div>
         <br>
         <label for="numOfPeople">Number of People</label>
         <img class="badge" src="img\icon-person.svg" alt="person image">
-        <input
-          id="numOfPeople" spellcheck="false" type="number" maxlength="3" name="people" placeholder="0"
-          oninput="javascript: if (this.value.length > this.maxLength) { this.value = this.value.slice(0, this.maxLength); }"
-        />
+        <input id="numOfPeople" spellcheck="false" type="number" maxlength="3" name="people" placeholder="0">
       </section>
 
       <section class="results-container">
         <div class="results-table">
           <div class="white-text flex30">Tip amount<span class="subtext">/ person</span></div>
-          <div class="result flex70" id="tipPerPerson">$0.00</div>
+          <div class="result flex70" id="tipPerPerson">$ 0.00</div>
         </div>
         <div class="results-table">
           <div class="white-text flex30">Total<br><span class="subtext">/ person</span></div>
-          <div class="result flex70" id="billPerPerson">$0.00</div>
+          <div class="result flex70" id="billPerPerson">$ 0.00</div>
         </div>
-        <a href="#" id="resetButton">RESET</a>
+        <a href="#" onclick="resetEverything()" class="grayout" id="resetButton">RESET</a>
       </section>
     </section>
 
