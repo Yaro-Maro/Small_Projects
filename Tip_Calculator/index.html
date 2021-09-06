@@ -16,13 +16,14 @@
     <section class="main-container">
       <section class="input-container">
         <label for="bill">Bill</label>
+        <img class="badge" src="img\icon-dollar.svg" alt="dollar image">
         <input
           id="bill" spellcheck="false" type="number" maxlength="6" name="bill" placeholder="0.00"
           oninput="javascript: if (this.value.length > this.maxLength) { this.value = this.value.slice(0, this.maxLength); }"
         />
         <label>Select Tip %</label>
         <div class="tip-buttons">
-          <a class="tip-button" href="#" type="button" name="5%" id="5" >5%</a>
+          <a class="tip-button" href="#" type="button" name="5%" id="5">5%</a>
           <a class="tip-button" href="#" type="button" name="10%" id="10">10%</a>
           <a class="tip-button" href="#" type="button" name="15%" id="15">15%</a>
           <a class="tip-button" href="#" type="button" name="25%" id="25">25%</a>
@@ -34,6 +35,7 @@
         </div>
         <br>
         <label for="numOfPeople">Number of People</label>
+        <img class="badge" src="img\icon-person.svg" alt="person image">
         <input
           id="numOfPeople" spellcheck="false" type="number" maxlength="3" name="people" placeholder="0"
           oninput="javascript: if (this.value.length > this.maxLength) { this.value = this.value.slice(0, this.maxLength); }"
@@ -41,16 +43,14 @@
       </section>
 
       <section class="results-container">
-        <table class="results-table">
-          <tr>
-            <td class="white-text">Tip amount<span class="subtext">/ person</span></td>
-            <td class="result" id="displayPerPerson">$4.27</td>
-          </tr>
-          <tr>
-            <td class="white-text">Total<br><span class="subtext">/ person</span></td>
-            <td class="result" id="displayTotal">32.79$</td>
-          </tr>
-        </table>
+        <div class="results-table">
+          <div class="white-text flex30">Tip amount<span class="subtext">/ person</span></div>
+          <div class="result flex70" id="tipPerPerson">$0.00</div>
+        </div>
+        <div class="results-table">
+          <div class="white-text flex30">Total<br><span class="subtext">/ person</span></div>
+          <div class="result flex70" id="billPerPerson">$0.00</div>
+        </div>
         <a href="#" id="resetButton">RESET</a>
       </section>
     </section>

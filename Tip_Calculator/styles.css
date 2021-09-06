@@ -12,6 +12,8 @@ body {
  background-color: hsl(0, 0%, 100%);
 }
 
+
+/* Image classes */
 .logo {
   display: block;
   margin: auto;
@@ -25,7 +27,13 @@ body {
   background-color: hsl(185, 41%, 84%);
 }
 
-/* TODO: WORK ON THIS CONTAINER (width, padding)*/
+img.badge {
+  position: absolute;
+  margin: 10px;
+  height: 1.8em;
+}
+
+
 /* Container classes */
 .main-container {
   margin-top: -2em;
@@ -55,17 +63,20 @@ label {
   color: hsl(186, 14%, 43%);
 }
 
-/* Table classes */
-table.results_table {
+/* Results container classes */
+.results-table {
+  display: flex;
   width: 100%;
+  height: 6em;
 }
 
-tr {
-  height: 5em;
+
+.flex30 {
+  flex: 1 1 30%;
 }
 
-td {
-  width: 50%;
+.flex70 {
+  flex: 1 1 70%;
 }
 
 .white-text {
@@ -163,6 +174,12 @@ a {
 a:hover, a:hover#resetButton {
   background-color: hsl(185, 41%, 84%);
   color: hsl(183, 100%, 15%);
+}
+
+/* Interactive classes */
+#active {
+  border: hsl(172, 67%, 45%);
+  background-color: hsl(172, 67%, 45%);
 }
 
 
