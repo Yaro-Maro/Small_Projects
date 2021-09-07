@@ -57,19 +57,24 @@ function resetEverything() {
 
 
 //FORM FIELDS
-$("bill").onchange = () => {
+$("bill").oninput = () => {
     billAmount = $("bill").value;
     checkIfcompleted();
 }
 
-$("numOfPeople").onchange = () => {
+$("numOfPeople").oninput = () => {
+    numberOfPeople = $("numOfPeople").value;
+    checkIfcompleted();
+}
+
+$("numOfPeople").oninput = () => {
     numberOfPeople = $("numOfPeople").value;
     checkIfcompleted();
 }
 
 //CHECK IF COMPLETED
 function checkIfcompleted() {
-  if (billAmount > 0 && numberOfPeople > 0 && tipPercentage > 0) {
+  if (billAmount > 0 && numberOfPeople > 0 && tipPercentage != "") {
     calculate();
     activateResetButton();
   }
@@ -86,33 +91,33 @@ function calculate() {
 
 //FILTER INPUTS
 
+TODO //Add Event Handler
 
-var elements = document.querySelector("type");
+var elements = document.querySelectorAll("[type='number']");
 
-  // elements.addEventListener()
-
-elements.forEach(myFunction);
-
-function myFunction() {
-  this.style.fontSize = "200px";
+for (var i = 0; i < elements.length; i++) {
+  let input = elements[i];
+  if (input.value.length > input.getAttribute("maxlength")) {
+    input.value = input.value.slice(0, input.maxLength);
+  }
 }
 
 
-
-$("numOfPeople").oninput = () => {
-  let input = $("numOfPeople");
-  if (input.value.length > input.getAttribute("maxlength"))
-  { input.value = input.value.slice(0, input.maxLength); }
-}
-
-$("customTip").oninput = () => {
-  let input = $("bill");
-  if (input.value.length > input.getAttribute("customTip"))
-  { input.value = input.value.slice(0, input.maxLength); }
-}
-
-$("bill").oninput = () => {
-  let input = $("bill");
-  if (input.value.length > input.getAttribute("maxlength"))
-  { input.value = input.value.slice(0, input.maxLength); }
-}
+// $("numOfPeople").oninput = () => {
+//   let input = $("numOfPeople");
+//   if (input.value.length > input.getAttribute("maxlength")) {
+//     input.value = input.value.slice(0, input.maxLength);
+//   }
+// }
+//
+// $("customTip").oninput = () => {
+//   let input = $("bill");
+//   if (input.value.length > input.getAttribute("customTip"))
+//   { input.value = input.value.slice(0, input.maxLength); }
+// }
+//
+// $("bill").oninput = () => {
+//   let input = $("bill");
+//   if (input.value.length > input.getAttribute("maxlength"))
+//   { input.value = input.value.slice(0, input.maxLength); }
+// }
