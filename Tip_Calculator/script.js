@@ -3,7 +3,7 @@ function $(name) {return document.getElementById(name)}
 var billAmount = 0;
 var tipPercentage = 0;
 var numberOfPeople = 0;
-var tipsArray = [5, 10, 15, 25, 50]
+var tipsArray = [5, 10, 15, 25, 50] //same as ID name
 
 
 
@@ -86,13 +86,17 @@ function calculate() {
 
 //FILTER INPUTS
 
-const elements = document.querySelectorAll("type='number'");
 
+var elements = document.querySelector("type");
 
-// TODO: FINISH WRITING THIS FOR EACH LOOP
-forEach(elements => {
-  elements.addEventListener()
-});
+  // elements.addEventListener()
+
+elements.forEach(myFunction);
+
+function myFunction() {
+  this.style.fontSize = "200px";
+}
+
 
 
 $("numOfPeople").oninput = () => {
