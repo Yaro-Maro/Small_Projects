@@ -47,17 +47,22 @@ img.badge {
 .main-container {
   margin-top: -2em;
   border-radius: 20px;
-  padding: 15px;
   background-color: hsl(189, 41%, 97%);
-
 }
 
 .input-container {
-  margin: 10px;
+  max-width: 500px;
+  width: calc(50% - 10em);
+  min-width: 250px;
+  margin: 30px;
 }
 
 .results-container {
+  max-width: 400px;
+  width: calc(50% - 10em);
+  min-width: 250px;
   padding: 2em;
+  margin: 30px;
   border-radius: 20px;
   background-color: hsl(183, 100%, 15%);
 }
@@ -79,14 +84,6 @@ label {
   height: 6em;
 }
 
-
-.flex30 {
-  flex: 1 1 30%;
-}
-
-.flex70 {
-  flex: 1 1 70%;
-}
 
 .white-text {
   font-size: 1.3em;
@@ -143,7 +140,7 @@ input:focus {
 
 .tip-button {
   display: inline-block;
-  margin: 0.2em;
+  margin: 0 0.2em 0.2em 0;
   border: solid hsla(0,0%,0%,0); /* transparent border */
   border-radius: 5px;
   padding: 0.3em;
@@ -163,12 +160,13 @@ input:focus {
 
 #resetButton  {
   display: block;
-  margin-top: 1em;
+  margin: 25px;
   border: none;
   border-radius: 5px;
-  padding: 0.3em;
-  box-sizing: border-box;
+  padding: 0.5em;
   width: 100%;
+  height: 2.5em;
+  box-sizing: border-box;
   background-color: hsl(172, 67%, 45%);
   color: hsl(183, 100%, 15%);
   font-size: 1.5em;
@@ -211,11 +209,51 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-/*
-- Strong cyan: hsl(172, 67%, 45%)
-- Very dark cyan: hsl(183, 100%, 15%)
-- Dark grayish cyan: hsl(186, 14%, 43%)
-- Dark grayish cyan: hsl(184, 14%, 56%)
-- Light grayish cyan: hsl(185, 41%, 84%)
-- Light grayish cyan: hsl(189, 41%, 97%)
-- White: hsl(0, 0%, 100%) */
+
+
+/* Alignment classes */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex > * {
+  flex: 1 1 default
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.width_30 {
+  width: 30%;
+}
+
+.flex-end {
+  align-self: flex-end;
+}
+
+
+.width_70 {
+  width: 70%;
+}
+
+.min-width_9em {
+  min-width: 9em;
+}
+
+@media (max-width: 700px) {
+  .input-container {
+    width: 100%;
+  }
+
+  .results-container {
+    width: 100%
+  }
+}
+
+@media (min-width: 1000px) {
+  .tip-button {
+    width: 31%;
+  }
+}

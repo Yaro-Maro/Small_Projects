@@ -1,11 +1,9 @@
 
 
 if (true) {
-  var elements = document.querySelectorAll("[class='test']")
-
-
+  var elements = document.querySelectorAll("[type='number']")
   for (var i = 0; i < 2; i++) {
-    elements[i].style.color = "red";
+    elements[i].style.backgroundColor = "red";
   }
 
 }

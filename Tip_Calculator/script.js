@@ -37,12 +37,13 @@ function removeActiveClass () {
 //RESET BUTTON FUNCTIONS
 function activateResetButton() {
     $("resetButton").classList.remove("grayout");
+    $("resetButton").addEventListener("click", resetEverything)
 }
 
 //Reset button press
 function resetEverything() {
   $("resetButton").classList.add("grayout");
-  removeActiveClass();
+  $("resetButton").removeAttribute("onclick");
   $("bill").value = "";
   $("customTip").value = "";
   $("numOfPeople").value = "";
@@ -52,7 +53,6 @@ function resetEverything() {
   tipPercentage = 0;
   numberOfPeople = 0;
 }
-
 
 
 
@@ -89,35 +89,14 @@ function calculate() {
   $('billPerPerson').innerHTML = "$ " + (billPerPerson).toFixed(2);
 }
 
-//FILTER INPUTS
-
-TODO //Add Event Handler
-
+//FILTER INPUTS (respect maxlength attribute of number fields)
 var elements = document.querySelectorAll("[type='number']");
-
 for (var i = 0; i < elements.length; i++) {
-  let input = elements[i];
-  if (input.value.length > input.getAttribute("maxlength")) {
-    input.value = input.value.slice(0, input.maxLength);
-  }
+  elements[i].addEventListener("input", maxNumberLength);
 }
 
-
-// $("numOfPeople").oninput = () => {
-//   let input = $("numOfPeople");
-//   if (input.value.length > input.getAttribute("maxlength")) {
-//     input.value = input.value.slice(0, input.maxLength);
-//   }
-// }
-//
-// $("customTip").oninput = () => {
-//   let input = $("bill");
-//   if (input.value.length > input.getAttribute("customTip"))
-//   { input.value = input.value.slice(0, input.maxLength); }
-// }
-//
-// $("bill").oninput = () => {
-//   let input = $("bill");
-//   if (input.value.length > input.getAttribute("maxlength"))
-//   { input.value = input.value.slice(0, input.maxLength); }
-// }
+function maxNumberLength() {
+  if (this.value.length > this.getAttribute("maxlength")) {
+    this.value = this.value.slice(0, this.maxLength);
+  }
+}
