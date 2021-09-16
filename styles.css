@@ -18,7 +18,8 @@
 }
 
 body {
- background-color: hsl(0, 0%, 100%);
+  height: 100vh;
+  background-color: hsl(185, 41%, 84%);
 }
 
 
@@ -31,6 +32,7 @@ body {
 
 
 .logo-container {
+  margin-bottom: -2em;
   padding: 4em 0 5.9em 0;
   width: 100%;
   background-color: hsl(185, 41%, 84%);
@@ -45,36 +47,28 @@ img.badge {
 
 /* Container classes */
 .main-container {
-  margin-top: -2em;
+  margin: 0 auto;
   border-radius: 20px;
+  width: 90%;
+  max-width: 1000px;
   background-color: hsl(189, 41%, 97%);
 }
 
 .input-container {
-  max-width: 500px;
-  width: calc(50% - 10em);
-  min-width: 250px;
   margin: 30px;
+  width: calc(50% - 10em);
+  min-width: 230px;
+  max-width: 500px;
 }
 
 .results-container {
-  max-width: 400px;
-  width: calc(50% - 10em);
-  min-width: 250px;
-  padding: 2em;
   margin: 30px;
   border-radius: 20px;
+  padding: 2em;
+  width: calc(50% - 10em);
+  min-width: 230px;
+  max-width: 350px;
   background-color: hsl(183, 100%, 15%);
-}
-
-
-/* Text classes */
-label {
-  display: block;
-  margin-bottom: 0.5em;
-  font-size: 1.3em;
-  font-weight: 600;
-  color: hsl(186, 14%, 43%);
 }
 
 /* Results container classes */
@@ -106,9 +100,16 @@ label {
   color: hsl(172, 67%, 45%);
 }
 
+/* Text classes */
+label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-size: 1.3em;
+  font-weight: 600;
+  color: hsl(186, 14%, 43%);
+}
 
 /* Input fields classes */
-
 input {
   color: hsl(183, 100%, 15%);
   background-color: hsl(0, 0%, 95%);
@@ -143,12 +144,12 @@ input:focus {
   margin: 0 0.2em 0.2em 0;
   border: solid hsla(0,0%,0%,0); /* transparent border */
   border-radius: 5px;
-  padding: 0.3em;
-  box-sizing: border-box;
+  padding: 0.15em;
   width: 45%;
+  box-sizing: border-box;
   background-color: hsl(183, 100%, 15%);
   color: white;
-  font-size: 1.5em;
+  font-size: 2em;
   font-weight: 600;
   text-align: center;
 }
@@ -211,7 +212,14 @@ input[type=number] {
 
 
 
-/* Alignment classes */
+/* Layout  classes */
+.main-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: : flex-end;
+}
+
+
 .flex {
   display: flex;
   flex-wrap: wrap;
@@ -221,27 +229,32 @@ input[type=number] {
   flex: 1 1 default
 }
 
-.justify-center {
-  justify-content: center;
-}
-
-.width_30 {
-  width: 30%;
+.space-around {
+  justify-content: space-around;
 }
 
 .flex-end {
   align-self: flex-end;
 }
 
+.width_30 {
+  width: 30%;
+}
 
 .width_70 {
   width: 70%;
 }
 
-.min-width_9em {
-  min-width: 9em;
+.min-width_6ch {
+  min-width: 6ch;
 }
 
+.min-width_10ch {
+  min-width: 10ch;
+}
+
+
+/* Media querries */
 @media (max-width: 700px) {
   .input-container {
     width: 100%;
@@ -250,10 +263,14 @@ input[type=number] {
   .results-container {
     width: 100%
   }
+
+  .main-container {
+    width: 100%;
+  }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1200px) {
   .tip-button {
-    width: 31%;
+    width: 30%;
   }
 }

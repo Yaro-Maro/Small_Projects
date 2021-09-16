@@ -92,11 +92,24 @@ function calculate() {
 //FILTER INPUTS (respect maxlength attribute of number fields)
 var elements = document.querySelectorAll("[type='number']");
 for (var i = 0; i < elements.length; i++) {
-  elements[i].addEventListener("input", maxNumberLength);
+  elements[i].addEventListener("input", filterInputs);
 }
 
-function maxNumberLength() {
-  if (this.value.length > this.getAttribute("maxlength")) {
-    this.value = this.value.slice(0, this.maxLength);
+function filterInputs() {
+  inputElement = this;
+  maxNumberLength(inputElement);
+  removeNoneNumeric(inputElement)
+}
+
+function maxNumberLength(inputElement) {
+  if (inputElement.value.length > inputElement.getAttribute("maxlength")) {
+    inputElement.value = inputElement.value.slice(0, inputElement.maxLength);
   }
+}
+
+function removeNoneNumeric() {
+  if (inputElement.which < 48 || inputElement.which > 57)
+    {
+        inputElement.preventDefault();
+    }
 }
