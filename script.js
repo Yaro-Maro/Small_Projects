@@ -82,14 +82,14 @@ function checkIfcompleted() {
 
 //CALCULATE
 function calculate() {
-  var tipPerPerson = (billAmount * tipPercentage)/numberOfPeople;
-  var billPerPerson = billAmount/numberOfPeople + tipPerPerson;
+  tipPerPerson = (billAmount * tipPercentage)/numberOfPeople;
+  billPerPerson = billAmount/numberOfPeople + tipPerPerson;
 
   $('tipPerPerson').innerHTML = "$ " +  (tipPerPerson).toFixed(2);
   $('billPerPerson').innerHTML = "$ " + (billPerPerson).toFixed(2);
 }
 
-//FILTER INPUTS (respect maxlength attribute of number fields)
+//FILTER INPUTS
 var elements = document.querySelectorAll("[type='number']");
 for (var i = 0; i < elements.length; i++) {
   elements[i].addEventListener("input", filterInputs);
@@ -98,18 +98,33 @@ for (var i = 0; i < elements.length; i++) {
 function filterInputs() {
   inputElement = this;
   maxNumberLength(inputElement);
-  removeNoneNumeric(inputElement)
+  // removeInvalidCharacters(inputElement);
+  removeDecimals(inputElement);
 }
 
+//respect maxlength attribute of number fields
 function maxNumberLength(inputElement) {
   if (inputElement.value.length > inputElement.getAttribute("maxlength")) {
     inputElement.value = inputElement.value.slice(0, inputElement.maxLength);
   }
 }
 
-function removeNoneNumeric() {
-  if (inputElement.which < 48 || inputElement.which > 57)
-    {
-        inputElement.preventDefault();
-    }
+function removeDecimals(inputElement) {
+  if (inputElement.getAttribute('id') == "bill") {
+    typeThis = inputElement.value.toFixed(2);
+    console.log(typeThis);
+  }
 }
+
+
+// //remove invalid symbols
+// function removeInvalidCharacters(inputElement) {
+//   var string = inputElement.value;
+//   var regex = /([^0-9\.])/;
+//   var match = regex.exec(string);
+//   while (match) {
+//     var character = match[1];
+//     var match = regex.exec(string);
+//   }
+//   inputElement.value.toFixed(2);
+// }
