@@ -21,7 +21,7 @@ for (let i = 0; i < tipsArray.length; i++) {
 
 //Custom tip
 $("customTip").oninput = () => {
-  tipPercentage = $("customTip").value;
+  tipPercentage = ()$("customTip").value)/100;
   removeActiveClass();
   $("customTip").classList.add("active");
   checkIfcompleted();
@@ -54,8 +54,6 @@ function resetEverything() {
   numberOfPeople = 0;
 }
 
-
-
 //FORM FIELDS
 $("bill").oninput = () => {
     billAmount = $("bill").value;
@@ -84,47 +82,31 @@ function checkIfcompleted() {
 function calculate() {
   tipPerPerson = (billAmount * tipPercentage)/numberOfPeople;
   billPerPerson = billAmount/numberOfPeople + tipPerPerson;
-
   $('tipPerPerson').innerHTML = "$ " +  (tipPerPerson).toFixed(2);
   $('billPerPerson').innerHTML = "$ " + (billPerPerson).toFixed(2);
 }
 
 //FILTER INPUTS
+//Respect max numberlength
 var elements = document.querySelectorAll("[type='number']");
 for (var i = 0; i < elements.length; i++) {
-  elements[i].addEventListener("input", filterInputs);
+  elements[i].addEventListener("input", function() {
+    if (this.value.length > this.getAttribute("maxlength")) {
+      this.value = this.value.slice(0, this.maxLength);
+    }
+  });
 }
 
-function filterInputs() {
-  inputElement = this;
-  maxNumberLength(inputElement);
-  // removeInvalidCharacters(inputElement);
-  removeDecimals(inputElement);
-}
+//Prevent more than two decimal places in "bill"
+$("bill").addEventListener("input", function() {
+    let input = this.value;
+    input = (input.indexOf(".") >= 0) ? (input.substr(0, input.indexOf(".")) + input.substr(input.indexOf("."), 3)) : input;
+    input = (input.indexOf(",") >= 0) ? (input.substr(0, input.indexOf(",")) + input.substr(input.indexOf(","), 3)) : input;
+});
 
-//respect maxlength attribute of number fields
-function maxNumberLength(inputElement) {
-  if (inputElement.value.length > inputElement.getAttribute("maxlength")) {
-    inputElement.value = inputElement.value.slice(0, inputElement.maxLength);
-  }
-}
-
-function removeDecimals(inputElement) {
-  if (inputElement.getAttribute('id') == "bill") {
-    typeThis = inputElement.value.toFixed(2);
-    console.log(typeThis);
-  }
-}
-
-
-// //remove invalid symbols
-// function removeInvalidCharacters(inputElement) {
-//   var string = inputElement.value;
-//   var regex = /([^0-9\.])/;
-//   var match = regex.exec(string);
-//   while (match) {
-//     var character = match[1];
-//     var match = regex.exec(string);
-//   }
-//   inputElement.value.toFixed(2);
-// }
+//Prevent decimal places in people field
+$("numOfPeople").addEventListener("keydown", function(event) {
+  if (event.keyCode == 188 || event.keyCode == 190) {
+    event.preventDefault();
+  };
+});
