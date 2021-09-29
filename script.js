@@ -21,7 +21,7 @@ for (let i = 0; i < tipsArray.length; i++) {
 
 //Custom tip
 $("customTip").oninput = () => {
-  tipPercentage = ()$("customTip").value)/100;
+  tipPercentage = ($("customTip").value / 100);
   removeActiveClass();
   $("customTip").classList.add("active");
   checkIfcompleted();
@@ -86,8 +86,8 @@ function calculate() {
   $('billPerPerson').innerHTML = "$ " + (billPerPerson).toFixed(2);
 }
 
-//FILTER INPUTS
-//Respect max numberlength
+// FILTER INPUTS
+// Respect max numberlength
 var elements = document.querySelectorAll("[type='number']");
 for (var i = 0; i < elements.length; i++) {
   elements[i].addEventListener("input", function() {
@@ -99,14 +99,22 @@ for (var i = 0; i < elements.length; i++) {
 
 //Prevent more than two decimal places in "bill"
 $("bill").addEventListener("input", function() {
-    let input = this.value;
-    input = (input.indexOf(".") >= 0) ? (input.substr(0, input.indexOf(".")) + input.substr(input.indexOf("."), 3)) : input;
-    input = (input.indexOf(",") >= 0) ? (input.substr(0, input.indexOf(",")) + input.substr(input.indexOf(","), 3)) : input;
+  console.log(this.value);
+  var input = this.value;
+  if (input.indexOf(".") >= 0) {
+     $("bill").value = input.substr(0, input.indexOf(".")) + input.substr(input.indexOf("."), 3);
+     return
+  }
+  if (input.indexOf(",") >= 0) {
+     $("bill").value = input.substr(0, input.indexOf(",")) + input.substr(input.indexOf(","), 3);
+     return
+  }
 });
 
+
 //Prevent decimal places in people field
-$("numOfPeople").addEventListener("keydown", function(event) {
+$("numOfPeople").onkeydown = (event) => {
   if (event.keyCode == 188 || event.keyCode == 190) {
     event.preventDefault();
-  };
-});
+  }
+}
