@@ -91,23 +91,22 @@ function calculate() {
 var elements = document.querySelectorAll("[type='number']");
 for (var i = 0; i < elements.length; i++) {
   elements[i].addEventListener("input", function() {
-    if (this.value.length > this.getAttribute("max_length")) {
+    if (this.value.length > this.getAttribute("data-length")) {
       this.value = this.value.slice(0, this.maxLength);
-    };
+    }
   });
-};
+}
 
 //Prevent more than two decimal places in "bill"
 $("bill").addEventListener("input", removeAfterDecimal);
-
 function removeAfterDecimal() {
   let input = this.value;
-  let decimalCharacters = [".", ","];
   // use forEach, to do this for every character
+  let decimalCharacters = [".", ","];
   decimalCharacters.forEach((item) => {
     if (input.indexOf(item) >= 0) {
        $("bill").value = input.substr(0, input.indexOf(item)) + input.substr(input.indexOf(item), 3);
-    };
+    }
   });
 };
 
@@ -116,17 +115,17 @@ function removeAfterDecimal() {
 $("bill").addEventListener("keydown", (key) => {
   if (key.keyCode == 69) { // prevent e
     key.preventDefault();
-  };
+  }
 });
 
 $("customTip").addEventListener("keydown", (key) => {
   if (key.keyCode == 188 || key.keyCode == 190 || key.keyCode == 69) { // prevent , . e
     key.preventDefault();
-  };
+  }
 });
 
 $("numOfPeople").addEventListener("keydown", (key) => {
   if (key.keyCode == 188 || key.keyCode == 190 || key.keyCode == 69) { // prevent , . e
     key.preventDefault();
-  };
+  }
 });
