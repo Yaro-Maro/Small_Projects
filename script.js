@@ -87,7 +87,7 @@ function calculate() {
 }
 
 // FILTER INPUTS
-// Respect max numberlength
+// Data-length attribute
 var elements = document.querySelectorAll("[type='number']");
 for (var i = 0; i < elements.length; i++) {
   elements[i].addEventListener("input", function() {
@@ -110,8 +110,7 @@ function removeAfterDecimal() {
   });
 };
 
-
-//Prevent decimal places and Eletters in the fields
+//Prevent decimal places and "e" letters in the field
 $("bill").addEventListener("keydown", (key) => {
   if (key.keyCode == 69) { // prevent e
     key.preventDefault();
@@ -119,13 +118,13 @@ $("bill").addEventListener("keydown", (key) => {
 });
 
 $("customTip").addEventListener("keydown", (key) => {
-  if (key.keyCode == 188 || key.keyCode == 190 || key.keyCode == 69) { // prevent , . e
+  if (key.keyCode == 188 || key.keyCode == 190 || key.keyCode == 69 || key.keyCode == 110) { // prevent , . e NumpadDecimal
     key.preventDefault();
   }
 });
 
 $("numOfPeople").addEventListener("keydown", (key) => {
-  if (key.keyCode == 188 || key.keyCode == 190 || key.keyCode == 69) { // prevent , . e
+  if (key.keyCode == 188 || key.keyCode == 190 || key.keyCode == 69 || key.keyCode == 110) { // prevent , . e NumpadDecimal
     key.preventDefault();
   }
 });

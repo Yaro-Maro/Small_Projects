@@ -26,7 +26,7 @@ body {
 /* Image classes */
 .logo {
   display: block;
-  margin: auto;
+  margin: 3em auto;
   width: 100px;
 }
 
@@ -48,6 +48,7 @@ img.badge {
 /* Container classes */
 .main-container {
   margin: 0 auto;
+  padding: 30px 20px;
   border-radius: 20px;
   width: 90%;
   max-width: 1000px;
@@ -55,16 +56,15 @@ img.badge {
 }
 
 .input-container {
-  margin: 30px;
+  padding: 1em;
   width: calc(50% - 10em);
   min-width: 230px;
   max-width: 500px;
 }
 
 .results-container {
-  margin: 30px;
   border-radius: 20px;
-  padding: 2em;
+  padding: 5em 3em;
   width: calc(50% - 10em);
   min-width: 230px;
   max-width: 350px;
@@ -80,7 +80,7 @@ img.badge {
 
 
 .results-text {
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: 600;
   color: hsl(0, 0%, 100%);
 }
@@ -104,7 +104,7 @@ img.badge {
 label {
   display: block;
   margin-bottom: 0.5em;
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: 600;
   color: hsl(186, 14%, 43%);
 }
@@ -126,7 +126,6 @@ input:focus {
 
 #bill, #numOfPeople {
   display: block;
-  margin-bottom: 2em;
   border: none;
   border-radius: 5px;
   padding: 0.2em;
@@ -135,11 +134,11 @@ input:focus {
   text-align: right;
   font-size: 2em;
   font-weight: 600;
-
 }
 
 /* Button classes */
-.tip-buttons {
+.tip-section {
+  margin-top: 2em;
   margin-bottom: 2em;
 }
 
@@ -165,7 +164,7 @@ input:focus {
 
 #resetButton  {
   display: block;
-  margin: 25px;
+  margin-top: 7em;
   border: none;
   border-radius: 5px;
   padding: 0.5em;
@@ -269,9 +268,25 @@ input[type=number] {
   }
 
   .main-container {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 1em 0.5em;
     width: 100%;
   }
+
+  .logo {
+    margin: auto;
+  }
+
+  .results-container {
+    margin: 1em 0;
+  }
+
+  #resetButton {
+    margin-top: 0;
+  }
 }
+
 
 @media (min-width: 1200px) {
   .tip-button {
