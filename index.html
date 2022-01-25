@@ -9,16 +9,19 @@
   <body>
     <main>
       <div class="main-center">
+        <!-- Logo -->
         <div class="logo-container">
           <img class="logo" src="img/logo.svg" alt="Splitter logo">
         </div>
         <div class="main-container flex space-around">
+          <!-- Bill -->
           <div class="input-container">
             <label for="bill">Bill</label>
             <img class="badge" src="img/icon-dollar.svg" alt="dollar image">
-            <div role="heading" aria-level="1">
+            <div role="heading" aria-level="1"> <!--used for screen readers-->
               <input id="bill" spellcheck="false" type="number" data-length="7" name="bill" placeholder="0.00" step=".01"/>
             </div>
+            <!--Tip-->
             <label>Select Tip %</label>
             <div class="tip-buttons">
               <a class="tip-button" href="#" id="5">5%</a>
@@ -29,20 +32,23 @@
               <input class="tip-button" id="customTip" spellcheck="false" data-length="2" type="number" name="custom" placeholder="Custom">
             </div>
             <br>
+            <!--Number of people-->
             <label for="numOfPeople">Number of People</label>
             <img class="badge" src="img/icon-person.svg" alt="person image">
             <input id="numOfPeople" spellcheck="false" type="number" data-length="3" name="people" placeholder="0">
           </div>
-
+          <!--Result, tip per person-->
           <div class="results-container flex">
             <div class="results-table">
               <div class="white-text width_30 min-width_10ch">Tip amount<span class="subtext">/ person</span></div>
               <div class="result width_70 min-width_6ch" id="tipPerPerson">$ 0.00</div>
             </div>
+            <!--Result, cost per person-->
             <div class="results-table">
               <div class="white-text width_30 min-width_10ch">Total<br><span class="subtext">/ person</span></div>
               <div class="result width_70 min-width_6ch" id="billPerPerson">$ 0.00</div>
             </div>
+            <!-- Reset button -->
             <a href="#" class="grayout flex-end" id="resetButton">RESET</a>
           </div>
         </div>
