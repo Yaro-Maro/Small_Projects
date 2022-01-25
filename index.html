@@ -14,21 +14,22 @@
         </section>
         <section class="main-container flex space-around">
           <section class="input-container">
-            <label for="bill">Bill</label>
+            <h2 for="bill">Bill</h2>
             <img class="badge" src="img/icon-dollar.svg" alt="dollar image">
-            <section role="heading" aria-level="1"> <!--Screen readers start here-->
+            <div role="heading" aria-level="1">
               <input id="bill" spellcheck="false" type="number" data-length="7" name="bill" placeholder="0.00" step=".01"/>
-            </section>
-            <label>Select Tip %</label>
-            <section class="tip-buttons">
+            </div>
+            <h2>Select Tip %</h2>
+            <div class="tip-buttons">
               <a class="tip-button" href="#" id="5">5%</a>
               <a class="tip-button" href="#" id="10">10%</a>
               <a class="tip-button" href="#" id="15">15%</a>
               <a class="tip-button" href="#" id="25">25%</a>
               <a class="tip-button" href="#" id="50">50%</a>
               <input class="tip-button" id="customTip" spellcheck="false" data-length="2" type="number" name="custom" placeholder="Custom">
+            </div>
             <br>
-            <label for="numOfPeople">Number of People</label>
+            <h2 for="numOfPeople">Number of People</h2>
             <img class="badge" src="img/icon-person.svg" alt="person image">
             <input id="numOfPeople" spellcheck="false" type="number" data-length="3" name="people" placeholder="0">
           </section>
