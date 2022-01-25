@@ -79,8 +79,8 @@ img.badge {
 }
 
 
-.white-text {
-  font-size: 1.3em;
+.results-text {
+  font-size: 2em;
   font-weight: 600;
   color: hsl(0, 0%, 100%);
 }
@@ -102,9 +102,9 @@ img.badge {
 
 /* Text classes */
 label {
-  display: Labelblock;
+  display: block;
   margin-bottom: 0.5em;
-  font-size: 1.3em;
+  font-size: 2em;
   font-weight: 600;
   color: hsl(186, 14%, 43%);
 }
