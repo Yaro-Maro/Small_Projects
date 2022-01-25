@@ -3,7 +3,7 @@ function $(name) {return document.getElementById(name)}
 var billAmount = 0;
 var tipPercentage = 0;
 var numberOfPeople = 0;
-var tipsArray = [5, 10, 15, 25, 50] //same as ID name
+var tipsArray = [5, 10, 15, 25, 50]; //same as ID name
 
 
 
@@ -37,7 +37,7 @@ function removeActiveClass () {
 //RESET BUTTON FUNCTIONS
 function activateResetButton() {
     $("resetButton").classList.remove("grayout");
-    $("resetButton").addEventListener("click", resetEverything)
+    $("resetButton").addEventListener("click", resetEverything);
 }
 
 //Reset button press
@@ -91,30 +91,42 @@ function calculate() {
 var elements = document.querySelectorAll("[type='number']");
 for (var i = 0; i < elements.length; i++) {
   elements[i].addEventListener("input", function() {
-    if (this.value.length > this.getAttribute("maxlength")) {
+    if (this.value.length > this.getAttribute("max_length")) {
       this.value = this.value.slice(0, this.maxLength);
-    }
+    };
   });
-}
+};
 
 //Prevent more than two decimal places in "bill"
-$("bill").addEventListener("input", function() {
-  console.log(this.value);
-  var input = this.value;
-  if (input.indexOf(".") >= 0) {
-     $("bill").value = input.substr(0, input.indexOf(".")) + input.substr(input.indexOf("."), 3);
-     return
-  }
-  if (input.indexOf(",") >= 0) {
-     $("bill").value = input.substr(0, input.indexOf(",")) + input.substr(input.indexOf(","), 3);
-     return
-  }
+$("bill").addEventListener("input", removeAfterDecimal);
+
+function removeAfterDecimal() {
+  let input = this.value;
+  let decimalCharacters = [".", ","];
+  // use forEach, to do this for every character
+  decimalCharacters.forEach((item) => {
+    if (input.indexOf(item) >= 0) {
+       $("bill").value = input.substr(0, input.indexOf(item)) + input.substr(input.indexOf(item), 3);
+    };
+  });
+};
+
+
+//Prevent decimal places and Eletters in the fields
+$("bill").addEventListener("keydown", (key) => {
+  if (key.keyCode == 69) { // prevent e
+    key.preventDefault();
+  };
 });
 
+$("customTip").addEventListener("keydown", (key) => {
+  if (key.keyCode == 188 || key.keyCode == 190 || key.keyCode == 69) { // prevent , . e
+    key.preventDefault();
+  };
+});
 
-//Prevent decimal places in people field
-$("numOfPeople").onkeydown = (event) => {
-  if (event.keyCode == 188 || event.keyCode == 190) {
-    event.preventDefault();
-  }
-}
+$("numOfPeople").addEventListener("keydown", (key) => {
+  if (key.keyCode == 188 || key.keyCode == 190 || key.keyCode == 69) { // prevent , . e
+    key.preventDefault();
+  };
+});
