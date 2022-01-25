@@ -101,8 +101,8 @@ img.badge {
 }
 
 /* Text classes */
-h2 {
-  display: block;
+label {
+  display: Labelblock;
   margin-bottom: 0.5em;
   font-size: 1.3em;
   font-weight: 600;
