@@ -19,6 +19,7 @@
 
 body {
   height: 100vh;
+  width: 100vw;
   background-color: hsl(185, 41%, 84%);
 }
 
@@ -26,7 +27,7 @@ body {
 /* Image classes */
 .logo {
   display: block;
-  margin: 3em auto;
+  margin: auto;
   width: 100px;
 }
 
@@ -46,34 +47,49 @@ img.badge {
 
 
 /* Container classes */
+.aligner {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
 .main-container {
+  display: flex;
+  justify-content: space-around;
+  box-sizing: border-box;
   margin: 0 auto;
-  padding: 30px 20px;
+  padding: 30px 0;
   border-radius: 20px;
   width: 90%;
-  max-width: 1000px;
+  max-width: 900px;
   background-color: hsl(189, 41%, 97%);
 }
 
 .input-container {
   padding: 1em;
-  width: calc(50% - 10em);
+  flex-basis: 50;
   min-width: 230px;
   max-width: 500px;
 }
 
 .results-container {
   border-radius: 20px;
-  padding: 5em 3em;
-  width: calc(50% - 10em);
+  padding: 3em 3em;
+  flex-basis: 50;
   min-width: 230px;
-  max-width: 350px;
+  max-width: 500px;
   background-color: hsl(183, 100%, 15%);
 }
 
 /* Results container classes */
 .results-table {
+  margin-bottom: 2em;
   display: flex;
+  align-items: center;
   width: 100%;
   height: 6em;
 }
@@ -94,7 +110,7 @@ img.badge {
 }
 
 .result {
-  font-size: 2.3em;
+  font-size: 4em;
   font-weight: 600;
   text-align: right;
   color: hsl(172, 67%, 45%);
@@ -164,7 +180,7 @@ input:focus {
 
 #resetButton  {
   display: block;
-  margin-top: 7em;
+  margin-top: 4.5em;
   border: none;
   border-radius: 5px;
   padding: 0.5em;
@@ -214,13 +230,8 @@ input[type=number] {
 }
 
 
-
 /* Layout  classes */
-.main-center {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
+
 
 
 .flex {
@@ -230,10 +241,6 @@ input[type=number] {
 
 .flex > * {
   flex: 1 1 default
-}
-
-.space-around {
-  justify-content: space-around;
 }
 
 .flex-end {
@@ -258,29 +265,28 @@ input[type=number] {
 
 
 /* Media querries */
-@media (max-width: 700px) {
+@media (max-width: 800px) {
+body {
+  background-color: red;
+}
+
   .input-container {
-    width: 100%;
+    flex-basis: 100;
   }
 
   .results-container {
-    width: 100%
+    flex-basis: 100;
+    /* width: 100% */
   }
 
   .main-container {
+    flex-direction: column;
     box-sizing: border-box;
     margin: 0;
     padding: 1em 0.5em;
     width: 100%;
   }
 
-  .logo {
-    margin: auto;
-  }
-
-  .results-container {
-    margin: 1em 0;
-  }
 
   #resetButton {
     margin-top: 0;
@@ -289,6 +295,10 @@ input[type=number] {
 
 
 @media (min-width: 1200px) {
+  p {
+    color: red;
+  }
+
   .tip-button {
     width: 30%;
   }
