@@ -110,21 +110,23 @@ function removeAfterDecimal() {
   });
 };
 
-//Prevent decimal places and "e" letters in the field
+//Prevent [e] in Bill field
 $("bill").addEventListener("keydown", (key) => {
   if (key.keyCode == 69) { // prevent e
     key.preventDefault();
   }
 });
 
+// prevent [,] [.] [e] [NumpadDecimal]
 $("customTip").addEventListener("keydown", (key) => {
-  if (key.keyCode == 188 || key.keyCode == 190 || key.keyCode == 69 || key.keyCode == 110) { // prevent , . e NumpadDecimal
+  if (key.keyCode == 188 || key.keyCode == 190 || key.keyCode == 69 || key.keyCode == 110) {
     key.preventDefault();
   }
 });
 
+// prevent [,] [.] [e] [NumpadDecimal]
 $("numOfPeople").addEventListener("keydown", (key) => {
-  if (key.keyCode == 188 || key.keyCode == 190 || key.keyCode == 69 || key.keyCode == 110) { // prevent , . e NumpadDecimal
+  if (key.keyCode == 188 || key.keyCode == 190 || key.keyCode == 69 || key.keyCode == 110) {
     key.preventDefault();
   }
 });

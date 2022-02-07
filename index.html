@@ -7,7 +7,7 @@
     <link rel="icon" href="img/favicon2.png">
   </head>
   <body>
-      <div class="aligner">
+      <div class="center">
         <!-- Logo -->
         <div class="logo-container">
           <img class="logo" src="img/logo.svg" alt="Splitter logo">
@@ -21,7 +21,7 @@
               <input id="bill" spellcheck="false" type="number" data-length="7" name="bill" placeholder="0.00" step=".01"/>
             </div>
             <!--Tip-->
-            <div class="tip-section">
+            <div class="tip-container">
               <label>Select Tip %</label>
               <div>
                 <a class="tip-button" href="#" id="5">5%</a>
@@ -39,15 +39,15 @@
             <input id="numOfPeople" spellcheck="false" type="number" data-length="3" name="people" placeholder="0">
           </div>
           <!--Result tip per person-->
-          <div class="results-container flex">
-            <div class="results-table">
-              <div class="results-text width_30 min-width_10ch">Tip amount<span class="subtext">/ person</span></div>
-              <div class="result width_70 min-width_6ch" id="tipPerPerson">$ 0.00</div>
+          <div class="result-container">
+            <div class="result-table">
+              <div class="result-text">Tip amount<span class="subtext">/ person</span></div>
+              <div class="result-output" id="tipPerPerson">$ 0.00</div>
             </div>
             <!--Result cost per person-->
-            <div class="results-table">
-              <div class="results-text width_30 min-width_10ch">Total<br><span class="subtext">/ person</span></div>
-              <div class="result width_70 min-width_6ch" id="billPerPerson">$ 0.00</div>
+            <div class="result-table">
+              <div class="result-text">Total<br><span class="subtext">/ person</span></div>
+              <div class="result-output" id="billPerPerson">$ 0.00</div>
             </div>
             <!-- Reset button -->
             <a href="#" class="grayout flex-end" id="resetButton">RESET</a>
