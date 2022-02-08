@@ -110,23 +110,23 @@ function removeAfterDecimal() {
   });
 };
 
-//Prevent [e] in Bill field
+//Prevent [e] [Num+] [Num-] [-] [=] in Bill field
 $("bill").addEventListener("keydown", (key) => {
-  if (key.keyCode == 69) { // prevent e
+  if (key.keyCode == 69 || key.keyCode == 107 || key.keyCode == 109 || key.keyCode == 189 || key.keyCode == 187) { // prevent e
     key.preventDefault();
   }
 });
 
-// prevent [,] [.] [e] [NumpadDecimal]
+// prevent [,] [.] [e] [NumpadDecimal] [Num+] [Num-] [-] [=] in Custom Tip field
 $("customTip").addEventListener("keydown", (key) => {
-  if (key.keyCode == 188 || key.keyCode == 190 || key.keyCode == 69 || key.keyCode == 110) {
+  if (key.keyCode == 188 || key.keyCode == 190 || key.keyCode == 69 || key.keyCode == 110 || key.keyCode == 107 || key.keyCode == 109 || key.keyCode == 189 || key.keyCode == 187) {
     key.preventDefault();
   }
 });
 
-// prevent [,] [.] [e] [NumpadDecimal]
+// // prevent [,] [.] [e] [NumpadDecimal] [Num+] [Num-] [-] [=] in Number Of People field
 $("numOfPeople").addEventListener("keydown", (key) => {
-  if (key.keyCode == 188 || key.keyCode == 190 || key.keyCode == 69 || key.keyCode == 110) {
+  if (key.keyCode == 188 || key.keyCode == 190 || key.keyCode == 69 || key.keyCode == 110 || key.keyCode == 107 || key.keyCode == 109 || key.keyCode == 189 || key.keyCode == 187) {
     key.preventDefault();
   }
 });
